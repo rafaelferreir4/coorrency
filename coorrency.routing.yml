@@ -1,0 +1,18 @@
+# The routing file replaces the hook_menu() call.
+# Each entry (without indentation) points to a route, with subsequent indented lines detailing specific settings.
+# Both routes require permissions, but you can replace them with _access: 'TRUE' for unrestricted access.
+coorrency.convert:
+  path: 'coorrency/convert/{from}/{to}'
+  defaults:
+    _controller: '\Drupal\coorrency\Controller\CoorrencyController::convert'
+    _title: 'Coorrency Converter'
+  requirements:
+    _permission: 'convert coorrency'
+
+coorrency.form:
+  path: '/admin/config/services/coorrency'
+  defaults:
+    _form: 'Drupal\coorrency\Form\CoorrencyForm'
+    _title: 'Coorrency settings'
+  requirements:
+    _permission: 'administer coorrency'

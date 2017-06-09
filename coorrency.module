@@ -1,0 +1,46 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function coorrency_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.coorrency':
+      return t('
+        <h2>Currency converter for Drupal.</h2>
+        <h3>Instructions</h3>
+        <p>Lorem ipsum dolor sit amet... <strong>Just kidding!</strong></p>
+        <p>Unpack in the <em>modules</em> folder (currently in the root of your Drupal 8 installation) and enable in <strong>/admin/modules</strong>.</p>
+        <p>Then, visit <strong>/admin/config/services/coorrency</strong>.</p>
+        <p>Most bugs have been ironed out, holes covered, features added. But this module is a work in progress. Please report bugs and suggestions, ok?</p>
+      ');
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function coorrency_theme($existing, $type, $theme, $path) {
+  $variables = [
+    'coorrency' => [
+      'variables' => [
+        'rate' => NULL,
+      ],
+      'template' => 'coorrency',
+    ],
+  ];
+
+  return $variables;
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function coorrency_page_attachments_alter(&$build) {
+  $config = \Drupal::config('coorrency.settings');
+  $ajax = $config->get('coorrency.ajax');
+
+  $build['#attached']['drupalSettings']['coorrency']['ajax'] = $ajax;
+}

@@ -1,0 +1,12 @@
+name: Coorrency
+type: module
+description: 'Currency converter for Drupal'
+package: Coorrency
+# core: 8.x
+configure: coorrency.form
+
+# Information added by Drupal.org packaging script on 2017-06-07
+version: '8.x-1.2'
+core: '8.x'
+project: 'coorrency'
+datestamp: 1496841844
