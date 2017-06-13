@@ -6,8 +6,7 @@ use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Using ConfigFormBase allows us to use the $this->config method
- * to retrieve the module's configuration.
+ * ConfigFormBase lets us use $this->config to retrieve the module's configuration.
  */
 class CoorrencyForm extends ConfigFormBase {
 
@@ -29,7 +28,7 @@ class CoorrencyForm extends ConfigFormBase {
 
     $form['api'] = [
       '#type' => 'fieldset',
-      '#title' => t('API Settings'),
+      '#title' => $this->t('API Settings'),
       '#collapsible' => TRUE,
       '#collapsed' => FALSE,
     ];

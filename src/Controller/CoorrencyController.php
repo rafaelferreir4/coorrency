@@ -12,8 +12,7 @@ class CoorrencyController extends ControllerBase {
 
   /**
    * Constructs coorrency page with arguments.
-   * This callback is mapped to the path
-   * 'coorrency/convert/{from}/{to}'.
+   * This callback is mapped to the path 'coorrency/convert/{from}/{to}'.
    *
    * @param string $from
    *   The base currency.
